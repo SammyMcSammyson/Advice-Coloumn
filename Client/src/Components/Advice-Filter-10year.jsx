@@ -11,7 +11,9 @@ export default function AdviceFilter10() {
   useEffect(() => {
     let fetchAdvice = async () => {
       try {
-        let adviceResponse = await fetch('http://localhost:8080/advice');
+        let adviceResponse = await fetch(
+          'https://advice-coloumn-2.onrender.com/advice'
+        );
         let adviceRecived = await adviceResponse.json();
         console.log('Fetched data:', adviceRecived);
 
@@ -27,7 +29,7 @@ export default function AdviceFilter10() {
   let handleUpvote = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/advice/upvote/${id}`,
+        `https://advice-coloumn-2.onrender.com/advice/upvote/${id}`,
         {
           method: 'POST',
         }
@@ -51,7 +53,7 @@ export default function AdviceFilter10() {
   const handleDownvote = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/advice/downvote/${id}`,
+        `https://advice-coloumn-2.onrender.com/advice/downvote/${id}`,
         {
           method: 'POST',
         }

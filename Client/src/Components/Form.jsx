@@ -17,7 +17,7 @@ export default function Form() {
     };
 
     try {
-      await fetch('http://localhost:8080/addAdvice', {
+      await fetch('https://advice-coloumn-2.onrender.com/addAdvice', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
