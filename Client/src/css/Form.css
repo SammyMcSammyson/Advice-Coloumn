@@ -1,0 +1,47 @@
+h1 {
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.agebox {
+  background-color: #a3b79c;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #7d3f3a;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.advicebox {
+  background-color: #a3b79c;
+  text-align: center;
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #7d3f3a;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.submitButton {
+  background-color: #a3b79c;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  font-size: 10px;
+  padding: 10px;
+  border: 2px solid #7d3f3a;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
