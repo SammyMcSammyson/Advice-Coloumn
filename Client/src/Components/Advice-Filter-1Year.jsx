@@ -11,7 +11,9 @@ export default function AdviceFilter() {
   useEffect(() => {
     let fetchAdvice = async () => {
       try {
-        let adviceResponse = await fetch(' https://advice-coloumn.onrender.com/advice');
+        let adviceResponse = await fetch(
+          ' https://advice-coloumn.onrender.com/advice'
+        );
         let adviceRecived = await adviceResponse.json();
         console.log('Fetched data:', adviceRecived);
 
@@ -134,9 +136,7 @@ export default function AdviceFilter() {
         ) : (
           <p>No Advice for you .</p>
         )}
-        <Link to='/' className='Links'>
-          Submit More Advice
-        </Link>
+        <Link to='/'>Submit More Advice</Link>
       </div>
     </>
   );
