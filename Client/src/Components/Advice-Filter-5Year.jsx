@@ -81,6 +81,17 @@ export default function AdviceFilter5() {
       }
     });
 
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`http://localhost:8080/advice/delete/${id}`, {
+        method: 'DELETE',
+      });
+      setAdvice((prevData) => prevData.filter((advice) => advice.id !== id));
+    } catch (error) {
+      console.error('Error downvoting:', error);
+    }
+  };
+
   //!once you have finished your app and deployment ins ready replace your local host urls with the render urls
   return (
     <>
@@ -109,13 +120,16 @@ export default function AdviceFilter5() {
               <div className='tablecontainer'>
                 <p className='static'>Advice</p>
                 <p>{item.advice}</p>
-                <div className='buttonContainerUV'>
+                <div className='buttonContainerVotes'>
                   <button onClick={() => handleUpvote(item.id)}>▴</button>
                   <p> {item.upvotes}</p>
-                </div>
-                <div className='buttonContainerDV'>
                   <button onClick={() => handleDownvote(item.id)}>▾</button>
                   <p>{item.downvotes}</p>
+                </div>
+                <div className='buttonContainerDelete'>
+                  <button onClick={() => handleDelete(item.id)}>
+                    Delete Post
+                  </button>
                 </div>
               </div>
             </div>

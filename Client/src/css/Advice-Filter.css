@@ -37,19 +37,18 @@ button {
   align-items: center;
 }
 
-.buttonContainerUV {
+.buttonContainerVotes {
   float: left;
   display: flex;
   background-color: #a3b79c;
   align-items: center;
   gap: 5px;
 }
-.buttonContainerDV {
+.buttonContainerDelete {
   float: right;
   display: flex;
   background-color: #a3b79c;
-  align-items: center;
-  gap: 5px;
+  margin-top: 0.8rem;
 }
 
 .LinksContainer {
@@ -61,7 +60,6 @@ button {
   gap: 10px;
 }
 
-/* Style for individual links */
 .Links {
   text-decoration: none;
   color: #5b3a29;

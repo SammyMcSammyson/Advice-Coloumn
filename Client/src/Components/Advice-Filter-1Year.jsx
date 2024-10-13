@@ -43,7 +43,7 @@ export default function AdviceFilter() {
       );
       console.log(id);
     } catch (error) {
-      console.error('Error upvoting:', error);
+      console.error('You say upvote I say no vote', error);
     }
   };
 
@@ -65,7 +65,18 @@ export default function AdviceFilter() {
         )
       );
     } catch (error) {
-      console.error('Error downvoting:', error);
+      console.error('Downvoting more like no voting:', error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`http://localhost:8080/advice/delete/${id}`, {
+        method: 'DELETE',
+      });
+      setAdvice((prevData) => prevData.filter((advice) => advice.id !== id));
+    } catch (error) {
+      console.error('you cannot delete ', error);
     }
   };
 
@@ -106,13 +117,16 @@ export default function AdviceFilter() {
               <div className='tablecontainer'>
                 <p className='static'>Advice</p>
                 <p>{item.advice}</p>
-                <div className='buttonContainerUV'>
+                <div className='buttonContainerVotes'>
                   <button onClick={() => handleUpvote(item.id)}>▴</button>
                   <p> {item.upvotes}</p>
-                </div>
-                <div className='buttonContainerDV'>
                   <button onClick={() => handleDownvote(item.id)}>▾</button>
                   <p>{item.downvotes}</p>
+                </div>
+                <div className='buttonContainerDelete'>
+                  <button onClick={() => handleDelete(item.id)}>
+                    Delete Post
+                  </button>
                 </div>
               </div>
             </div>

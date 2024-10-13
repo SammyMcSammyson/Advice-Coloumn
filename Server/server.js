@@ -69,7 +69,7 @@ app.post('/advice/upvote/:id', async (req, res) => {
     );
     res.status(200).json(upvoteAdvice.rows[0]);
   } catch (error) {
-    console.error('Error upvoting:', error);
+    console.error('You can not even upvote', error);
     res.status(500).json({ success: false });
   }
 });
@@ -83,7 +83,24 @@ app.post('/advice/downvote/:id', async (req, res) => {
     );
     res.status(200).json(downvoteAdvice.rows[0]);
   } catch (error) {
-    console.error('Error downvoting:', error);
+    console.error(
+      'Stop being so negative your downvote did not go through',
+      error
+    );
+    res.status(500).json({ success: false });
+  }
+});
+
+app.delete('/advice/delete:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleteAdvice = await db.query(
+      `DELETE FROM advice WHERE id = $1 RETURNING *`,
+      [id]
+    );
+    res.status(200).json(deleteBiscuit.rows);
+  } catch (error) {
+    console.error('You cannot delete this hahahahaha', error);
     res.status(500).json({ success: false });
   }
 });
