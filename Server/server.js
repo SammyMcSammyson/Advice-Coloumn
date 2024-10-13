@@ -14,9 +14,9 @@ dotenv.config();
 const dbConnectionString = process.env.DATABASE_URL;
 export const db = new pg.Pool({ connectionString: dbConnectionString });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
-  console.log(`Running on PORT ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
 
 app.get('/', (req, res) => {
