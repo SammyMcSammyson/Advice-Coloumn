@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import pg from 'pg';
 
-const express = require('express');
 const app = express();
 
 app.use(express.json());
@@ -15,7 +14,7 @@ dotenv.config();
 const dbConnectionString = process.env.DATABASE_URL;
 export const db = new pg.Pool({ connectionString: dbConnectionString });
 
-const PORT = process.env.PORT || 3030;
+const PORT = 8080;
 app.listen(PORT, () => {
   console.log(`Running on PORT ${PORT}`);
 });
