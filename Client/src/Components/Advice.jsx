@@ -7,7 +7,9 @@ export default function Advice() {
   useEffect(() => {
     let fetchAdvice = async () => {
       try {
-        let adviceResponse = await fetch('http://localhost:8080/advice');
+        let adviceResponse = await fetch(
+          ' https://advice-coloumn.onrender.com/advice'
+        );
         let adviceRecived = await adviceResponse.json();
         console.log('Fetched data:', adviceRecived);
 
